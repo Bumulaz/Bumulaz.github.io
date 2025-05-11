@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>About Me</title>
+    <link rel="icon" type="image/x-icon" href="media/favicon.ico" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <link rel="stylesheet" href="styles/structure.css" />
+    <style>
+      body {
+        background-image: url('media/main.gif');
+        background-size: contain;
+        background-repeat: repeat;
+        background-size: cover;
+        background-color: transparent;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="content-block">
+      <div class="content-block-outer">
+        <div class="x-square"></div>
+        <div class="max-square"></div>
+        <div class="min-square"></div>
+      </div>
+      <div class="content">
+        <h2 class="home-title">My Humble Page &trade;</h2>
+        <div class="profile">
+
+          
+          <div>
+            <img
+              width="200"
+              height="150"
+              src="media/explow.gif"
+              alt="cat.gif"
+              class="esplow"
+            />
+            <ul>
+              Joseph
+            </ul>
+            <ul class="dob">
+              DOB: 06/19/2004
+            </ul>
+            <ul>
+              Age: 20
+            </ul>
+            <ul>
+              Born: Yonkers, NY
+            </ul>
+            <div id="est-clock">
+              <h3>Current EST Time</h3>
+              <p id="clock"></p>
+            
+            <h3>Birthday Countdown</h3>
+            <p id="countdown"></p>
+            </div>
+          </div>
+          <div class="bio">
+            <p>My name is Joseph.</p>
+            <p>
+              I was born and raised in Yonkers for most of my life before coming
+              over to Charlotte.
+            </p>
+            <p>
+              I moved here after graduating in order to continue my education and
+              life here.
+            </p>
+          </div>
+          
+          <button id="math-button">Generate Random Number</button>
+           
+          <form action="/newsletter-signup" method="post" class="newsletter-form">
+            <fieldset>
+              <legend>Sign up for my newsletter!</legend>
+
+              <label for="email">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+              />
+
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" />
+
+              <label for="signup-date">Signup Date:</label>
+              <input type="date" id="signup-date" name="signup-date" />
+
+              <label for="signup-time">Signup Time:</label>
+              <input type="time" id="signup-time" name="signup-time" />
+
+              <label for="language">Preferred Language:</label>
+              <input type="radio" id="radio" name="language" value="English" />
+              <label for="English">English</label>
+              <input type="radio" id="radio" name="language" value="Spanish" />
+              <label for="Spanish">Spanish</label>
+              <input type="radio" id="radio" name="language" value="German" />
+              <label for="German">German</label>
+
+              <label for="Notifications">
+                How would you want notifications?:
+              </label>
+              <input
+                type="range"
+                id="Notifications"
+                name="Notifications"
+                min="1"
+                max="3"
+                value="1"
+              />
+
+              <div class="range-value-display">
+                <span id="selectedValue">Daily</span>
+              </div>
+
+              <script>
+                const slider = document.getElementById("Notifications");
+                const selectedValueSpan = document.getElementById(
+                  "selectedValue"
+                );
+                const labels = ["Daily", "Weekly", "Monthly"];
+
+                slider.addEventListener("input", function () {
+                  selectedValueSpan.textContent = labels[this.value - 1];
+                });
+              </script>
+
+              <label>What would you want notifcations for?:</label>
+              <div>
+                <input type="checkbox" id="news" name="topics" value="news" />
+                <label for="news">News</label>
+              </div>
+              <div>
+                <input type="checkbox" id="videos" name="topics" value="videos" />
+                <label for="tech">Videos</label>
+              </div>
+              <div>
+                <input type="checkbox" id="blog" name="topics" value="blog" />
+                <label for="blog">Blog</label>
+              </div>
+
+              <label for="country">Country:</label>
+              <select id="country" name="country">
+                <option value="">Select a country</option>
+                <option value="us">United States</option>
+                <option value="ca">Canada</option>
+                <option value="uk">United Kingdom</option>
+                </select>
+
+              <label for="comments">Extra Requests:</label>
+              <textarea id="comments" name="comments" rows="4"></textarea>
+
+              <label for="zipcode">Zip Code (US):</label>
+              <input
+                type="text"
+                id="zipcode"
+                name="zipcode"
+                pattern="[0-9]{5}(-[0-9]{4})?"
+                title="Please enter a valid US zip code (e.g., 12345 or 12345-6789)"
+              />
+
+              <label for="favorite-color">Favorite Color?:</label>
+              <input
+                type="text"
+                id="favorite-color"
+                name="favorite-color"
+                list="colors"
+              />
+              <datalist id="colors">
+                <option value="Red"></option>
+                <option value="Green"></option>
+                <option value="Blue"></option>
+                <option value="Yellow"></option>
+                <option value="Purple"></option>
+              </datalist>
+            </fieldset>
+
+            <button type="submit">Sign Up</button>
+            <button type="reset">Cancel</button>
+          </form>
+        </div>
+
+        <a href="interests.html" class="pages">Interests</a>
+        <a href="history.html" class="pages">History</a>
+      </div>
+    </div>
+  </body>
+  <script>
+    // Function to display current EST time
+    function displayCurrentESTTime() {
+      const now = new Date();
+      const estOffset = -5; // EST is UTC-5
+      const estTime = new Date(now.getTime() + estOffset * 60 * 60 * 1000);
+      const hours = estTime.getHours();
+      const minutes = estTime.getMinutes();
+      const seconds = estTime.getSeconds();
+
+      
+      const paddedMinutes = minutes < 10 ? "0" + minutes : minutes;
+      const paddedSeconds = seconds < 10 ? "0" + seconds : seconds;
+
+      const timeString = hours + ":" + paddedMinutes + ":" + paddedSeconds + " EST";
+      document.getElementById("clock").textContent = timeString;
+    }
+
+    
+    setInterval(displayCurrentESTTime, 1000);
+
+    displayCurrentESTTime();
+
+    
+    alert("Welcome to my Humble Page!");
+
+    
+    function useMathMethod() {
+      const randomNumber = Math.random() * 100; // Generate a random number between 0 and 100
+      const roundedNumber = Math.round(randomNumber);
+      const numberString = String(roundedNumber); //convert the number to a string
+      console.log("Random number between 0 and 100:", numberString);
+      return numberString; // Return the string
+    }
+
+    
+    function delayedCommand() {
+      const startTime = new Date();
+      setTimeout(function () {
+        const endTime = new Date();
+        const timeTaken = (endTime.getTime() - startTime.getTime()) / 1000; 
+        const result = useMathMethod();
+        alert(
+          "The random number is: " +
+            result +
+            ". This process took " +
+            timeTaken +
+            " seconds."
+        );
+      }, 2000); // Delay 2 secs
+    }
+
+    
+    document.getElementById("math-button").addEventListener("click", delayedCommand);
+
+    
+    function convertNumberAndText() {
+      const myNumber = 42;
+      const myText = "123";
+
+      const numberToText = String(myNumber);
+      const textToNumber = Number(myText);
+
+      console.log("Number to Text:", numberToText, typeof numberToText);
+      console.log("Text to Number:", textToNumber, typeof textToNumber);
+    }
+
+    convertNumberAndText();
+
+    
+    function birthdayCountdown() {
+      const today = new Date();
+      const currentYear = today.getFullYear();
+      const birthday = new Date(currentYear, 5, 19); 
+
+      
+      if (today > birthday) {
+        birthday.setFullYear(currentYear + 1);
+      }
+
+      const timeDiff = birthday.getTime() - today.getTime();
+      const days = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+
+      document.getElementById("countdown").textContent = days + " days";
+    }
+
+    
+    birthdayCountdown();
+  </script>
+</html>
