@@ -1,0 +1,76 @@
+body {
+
+    /* color for the page */
+    background-color: #E6D4BF;
+}
+
+/*fonts for the page*/
+
+/*heading fonts*/
+@font-face {
+    font-family: 'arcade';
+    src: url('/fonts/arcadereg.otf') format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
+
+/*fonts for normal text*/
+@font-face {
+    font-family: 'chonky';
+    src: url('/fonts/chonky.otf')format('opentype');
+    font-style: normal;
+    font-weight: normal;
+}
+/*Title text for the page*/
+
+.pageTitle{
+    font-family: 'arcade';
+    text-align: center;
+    font-size: 80px;
+}
+
+/*Top nav bar*/
+
+.pageNav{
+    font-family: 'chonky';
+    text-align: center;
+    font-size: 30px;
+    padding-bottom: 3%;
+}
+/*bottom copyright text*/
+.copyright {
+    font-family: 'chonky';
+    text-align: center;
+    font-size: 19px;
+}
+/*bottom nav*/
+.botNav {
+    font-family: 'chonky';
+    text-align: center;
+    font-size: 25px;
+    padding-top: 4%;
+}
+
+.pgHeaders{
+    font-family: 'arcade';
+    font-size: 24px;
+    padding-left: 15%;
+}
+
+.pgtxt {
+    font-family: 'chonky';
+    font-size: 23px;
+    padding-left: 16%;
+}
+
+.webLink {
+    font-family: 'chonky';
+    font-size: 23px;
+    padding-left: 17%;
+}
+
+.introLink {
+    font-family: 'chonky';
+    font-size: 23px;
+    padding-left:17% ;
+}
