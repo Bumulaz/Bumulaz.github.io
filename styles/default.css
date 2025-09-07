@@ -53,10 +53,16 @@ body {
 
 .pgHeaders{
     font-family: 'arcade';
-    font-size: 24px;
     padding-left: 15%;
 }
 
+h1.pgHeaders {
+    font-size: 30px;
+}
+
+h2.pgHeaders {
+    font-size: 22px;
+}
 .pgtxt {
     font-family: 'chonky';
     font-size: 23px;
@@ -90,4 +96,10 @@ p.pgtxt{
     display: block;
     margin: auto;
     width: 13%;
+}
+
+/*Example of header font in brand file*/
+.hdrExample{
+    font-family: 'arcade';
+    font-size: 17px;
 }
