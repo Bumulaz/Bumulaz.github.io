@@ -25,3 +25,49 @@ body {
     margin-right: 0 !important;
     width: 100%;         
 }
+
+/* Container for the burger list */
+#output {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 400px; /* Matches your form width */
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden; /* Keeps rounded corners on children */
+}
+
+/* Individual list items */
+#output li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Courier New', Courier, monospace; /* "Receipt" font feel */
+    font-size: 1.1rem;
+}
+
+/* Zebra Striping using your JS classes */
+.even {
+    background-color: #f9f9f9;
+}
+
+.odd {
+    background-color: #ffffff;
+}
+
+/* Special styling for your themed words */
+.fizz-word {
+    color: #e67e22; /* Cheddar orange */
+    font-weight: bold;
+}
+
+.buzz-word {
+    color: #d35400; /* Toasted bun brown */
+    font-weight: bold;
+}
+
+.fizz-buzz-word {
+    color: #c0392b; /* Ketchup red */
+    font-weight: bold;
+    text-decoration: underline;
+}

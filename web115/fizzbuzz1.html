@@ -4,43 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/default.css">
-    <link rel="stylesheet" href="../styles/fizzbuzz1.css">
+    <link rel="stylesheet" href="../styles/fizzbuzz0.css">
     <link rel="icon" type="image/x-icon" href="../images/favicon-32x32.png">
     <title>FizzBuzz1</title>
 </head>
+
 <body>
-<div data-include="../components/header.html"></div>
+
+<div data-include="../components/header.html"></div> 
+ <h2 class="pageTitle">FizzBuzz 1</h2>
 
 <main>
-<h2 class="pgtxt">FizzBuzz 1</h2>
-<section class="fizz-container">
-        <div class="controls">
-            <div class="input-group">
-                <label>Range</label>
-                <input type="number" id="limit" value="140">
-            </div>
-            <div class="input-group">
-                <label>Divisor A</label>
-                <input type="number" id="div1" value="3">
-            </div>
-            <div class="input-group">
-                <label>Word A</label>
-                <input type="text" id="word1" value="EEK!">
-            </div>
-            <div class="input-group">
-                <label>Divisor B</label>
-                <input type="number" id="div2" value="5">
-            </div>
-            <div class="input-group">
-                <label>Word B</label>
-                <input type="text" id="word2" value="SCREAM!">
-            </div>
-            <button class="btn-generate" onclick="generateFizzBuzz()">Run Script</button>
-        </div>
 
-        <ul id="outputList">
-            </ul>
-    </section>
+<form id="info-form">
+    <h3 id="greeting" class="pgtxt">Welcome to Bümulaz' Burgers</h3>
+    <p class="pgtxt">What's your first name?</p> 
+    <input type="text" id="first_name" placeholder="Enter your first name">
+   <p class="pgtxt">Middle initial?</p>
+   <input type="text" id="middle-initial" placeholder="M.I." maxlength="1">
+   <p class="pgtxt">What's your last name?</p>
+   <input type="text" id="last_name" placeholder="Enter your last name">
+   <input type="submit" class="submitButton" id="submitButton" value="Submit"> 
+  
+</form>
+<section aria-label="fb0 output">
+    <ul id="output"></ul>
+</section>
 </main>
 
 <div data-include="../components/footer.html"></div>
