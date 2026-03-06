@@ -106,8 +106,9 @@ p.pgtxt{
 
 .site-logo {
     float:left;
+    margin-top: 100px;
 }
 .site-logo-mini {
     float: left;
-    padding-left: 230px;
+    margin-left: 200px;
 }
