@@ -128,8 +128,7 @@ fieldset {
 }
 
 .bgtxt {
-    flex: 1;               
-    padding: 8px;          
+    flex: 1;                       
     max-width: 900px;
     height: 50px;
     width: 100%;
