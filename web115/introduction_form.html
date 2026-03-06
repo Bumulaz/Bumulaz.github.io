@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/default.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-32x32.png">
+    <title>Intro Form</title>
+</head>
+<body>
+<div data-include="../components/header.html"></div>
+
+<main>
+<div class="intro-form">
+    <div id="introtitle">
+  <h2 class="pageMini">Intro Form</h2>
+  <p class="pageMini"> { indicates a required field. </p>
+  </div>
+  <form  id="intro-form">
+
+    <fieldset id="namefield">
+        <legend class="pageMini">Name</legend>
+       <div class="form-row"> <label for="first_name" class="pageMini"> { First Name:</label> </div>
+        <input type="text" id="first_name" value="Joseph" required="">
+         <div class="form-row"><label for="middle_initial" class="pageMini">M.I</label> </div>
+        <input type="text" id="middle_initial" value="L.">
+         <div class="form-row"><label for="last_name" class="pageMini"> { Last Name:</label> </div>
+        <input type="text" id="last_name" value="Castro" required="">
+    </fieldset>
+
+    <fieldset id="bg-info">
+    <legend class="pageMini">Background Info</legend>
+
+    <div class="form-row">
+        <label for="personal-bg" class="pageMini">{ Personal Background:</label>
+        <textarea id="personal-bg" class="bgtxt" required>Born in Yonkers, NY and moved to Charlotte in 2022. Currently 21 years old pursuing a Full Stack Degree in CPCC.</textarea>
+    </div>
+
+    <div class="form-row">
+        <label for="prof-bg" class="pageMini">{ Professional Background:</label>
+        <textarea id="prof-bg" class="bgtxt" required>Currently working as a Customer Service Rep at a computer store. Previously I worked as a cashier at a Harris Teeter and before that, an intern at a driving school.</textarea>
+    </div>
+
+    <div class="form-row">
+        <label for="academic-bg" class="pageMini">{ Academic Background:</label>
+        <textarea id="academic-bg" class="bgtxt" required>Went to and graduated from high school in NY before moving to Charlotte. I started my journey at CPCC in Spring 2023 and am currently in semester number 4.</textarea>
+    </div>
+
+    <div class="form-row">
+        <label for="computer" class="pageMini">{ Primary Computer:</label>
+        <textarea id="computer" class="bgtxt" required>Main PC: Linux (CachyOS with Hyprland)+ Windows 11 (rarely used) Laptop: Windows 11</textarea>
+    </div>    
+</fieldset>
+
+    <fieldset id="coursefield">
+    <legend class="pageMini">Courses:</legend>
+    <div id="course-container">
+        <div class="course-entry">
+            <input type="text" class="course-input" value="CSC-154" required>
+        </div>
+        <div class="course-entry">
+            <input type="text" class="course-input" value="CTS-118" required>
+        </div>
+        <div class="course-entry">
+            <input type="text" class="course-input" value="WEB-115" required>
+        </div>
+    </div>
+</fieldset>
+
+<button type="submit" class="submitbtn">Submit</button>
+  </form>
+<div id="form-output" class="intro-output"></div>
+</div>
+
+</main>
+
+<div data-include="../components/footer.html"></div>
+<script src="../scripts/HTMLInclude.js"></script>
+<script src="../scripts/intro-form.js"></script>
+</body>
+
+
+</html>
