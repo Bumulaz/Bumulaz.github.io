@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/default.css">
-    <title> put pg title here</title>
+    <link rel="stylesheet" href="../styles/fizzbuzz0.css">
+    <title>FizzBuzz 0</title>
 </head>
+
 <body>
 <header>
-    <h1 class="pageTitle">{Joseph Castro's Jocund Jackdaw - WEB115 - N850{<h1> 
+    <h1 class="pageTitle">{Joseph Castro's Jocund Jackdaw - WEB115 - N850{</h1> 
+    <h2 class="pageTitle">{ FizzBuzz 0 {</h2>    
     <h2 class="pageNav">
         <a href="/index.html">Home</a>
         <a href="../web115/contract.html">Contract</a>
@@ -20,7 +23,20 @@
 </header>
 
 <main>
-
+<form id="info-form">
+    <h3 id="greeting" class="pgtxt">Welcome to Bümulaz' Burgers</h3>
+    <p class="pgtxt">What's your first name?</p> 
+    <input type="text" id="first_name" placeholder="Enter your first name">
+   <p class="pgtxt">Middle initial?</p>
+   <input type="text" id="middle-initial" placeholder="M.I." maxlength="1">
+   <p class="pgtxt">What's your last name?</p>
+   <input type="text" id="last_name" placeholder="Enter your last name">
+   <input type="submit" class="submitButton" id="submitButton" value="Submit"> 
+  
+</form>
+<section aria-label="fb0 output">
+    <ul id="output"></ul>
+</section>
 </main>
 
 <footer>
@@ -29,6 +45,7 @@
     </nav>
     <p class="copyright">Page maintained by BümuEnterprises</p>
     <p class="copyright">BümuEnterprises Est: 2004</p>
+    <script src="../scripts/fb0.js"></script>
     <script src="https://lint.page/kit/880bd5.js" crossorigin="anonymous"></script>
 </footer>
 </body>
