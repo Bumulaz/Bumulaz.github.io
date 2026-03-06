@@ -103,3 +103,11 @@ p.pgtxt{
     font-family: 'arcade';
     font-size: 17px;
 }
+
+.site-logo {
+    float:left;
+}
+.site-logo-mini {
+    float: left;
+    padding-left: 230px;
+}
