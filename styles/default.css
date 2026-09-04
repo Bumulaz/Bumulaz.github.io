@@ -74,8 +74,24 @@ h2.pgHeaders {
 
 
 }
+.pgtxtH {
+    font-family: 'chonky';
+    font-size: 23px;
+    padding-left: 44.1%;
+}
 p.pgtxt{
- padding-left: 16%
+ padding-left: 16%;
+}
+
+h5.pgtxt {
+    padding-left: 16%;
+}
+/* if making a list and want to use the font use this class*/
+.fontList {
+    list-style: inside;
+}
+.fontList .pgtxt{
+    padding-left: 16%;
 }
 .webLink {
     font-family: 'chonky';
@@ -102,7 +118,11 @@ p.pgtxt{
     margin: auto;
     width: 13%;
 }
-
+.introImg {
+    width: 12%;
+    display: block;
+    margin: auto;
+}
 /*Example of header font in brand file*/
 .hdrExample{
     font-family: 'arcade';
@@ -160,4 +180,8 @@ fieldset {
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+}
+
+.imgQuote .pgtxt{
+    padding-left: 44.1%;
 }
