@@ -1,88 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Quiz Game</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-
 <body>
 
+    <h1>World War II Quiz Game by Joseph Castro</h1>
+    
+    <div class="qBorder">                
+        <h2>What year did World War II end?</h2>
+        <select id="q1">
+            <option value="none">--Select an Answer--</option>
+            <option value="year1">1935</option>
+            <option value="year2">1945</option>
+            <option value="year3">1953</option>
+            <option value="year4">1940</option>
+        </select>
+        <!-- Feedback paragraph for Q1 -->
+        <p id="fb1" class="feedback"></p>
+    </div>
 
-        <h1>World War II Quiz Game by Joseph Castro</h1>
-  <div class="qBorder">                
-          <h2>What year did World War II end?</h2>
-            <select>
-              <option value="year1">1935</option>
-              <option value="year2">1945</option>
-              <option value="year3">1953</option>
-              <option value="year4">1940</option>
+    <div class="qBorder">
+        <h2>What event brought the USA into WWII?</h2>
+        <select id="q2">
+            <option value="none">--Select an Answer--</option>
+            <option value="IwoJima">Iwo Jima</option>
+            <option value="IFrance">The Invasion of France</option>
+            <option value="PearlHarbor">Pearl Harbor</option>
+            <option value="D-Day">Operation D-Day</option>
+        </select>
+        <p id="fb2" class="feedback"></p>
+    </div>
 
-            </select>
-  </div>
-  <div class="qBorder">
-          <h2>What event brought the USA into WWII?</h2>
-            <select>
-              <option value="IwoJima">Iwo Jima</option>
-              <option value="IFrance">The Invasion of France</option>
-              <option value="PearlHarbor">Pearl Harbor</option>
-              <option value="D-Day">Operation D-Day</option>
-            </select>
-  </div>
-  <div class="qBorder">
+    <div class="qBorder">
           <h2>Who were the 3 main leaders for the Allied Powers?</h2>
            <fieldset id="checkbox-group">
-            <input type="checkbox" class ="limit" name="Stalin" value="Joseph Stalin">
-            <label for="Stalin">Joseph Stalin</label>
+            <input type="checkbox" class="limit" name="Stalin" id="stalin" value="Joseph Stalin">
+            <label for="stalin">Joseph Stalin</label>
 
-            <input type="checkbox" class ="limit" name="Roosevelt" value="Roosevelt">
-            <label for="Roosevelt">Franklin D. Roosevelt</label>
+            <input type="checkbox" class="limit" name="Roosevelt" id="roosevelt" value="Roosevelt">
+            <label for="roosevelt">Franklin D. Roosevelt</label>
 
-            <input type="checkbox" class ="limit" name="Churchhill" value="Churchhill">  
-            <label for="Churchhill">Winston Churchhill</label>
+            <input type="checkbox" class="limit" name="Churchhill" id="churchhill" value="Churchhill">  
+            <label for="churchhill">Winston Churchhill</label>
 
-            <input type="checkbox" class ="limit" name="Goebbels" value="Goebbels">
-            <label for="Goebbels">Joseph Goebbels</label>
+            <input type="checkbox" class="limit" name="Goebbels" id="goebbels" value="Goebbels">
+            <label for="goebbels">Joseph Goebbels</label>
 
-            <input type="checkbox" class ="limit" name="MacArthur" value="MacArthur">
-            <label for="MacArthur">Douglas MacArthur</label>
+            <input type="checkbox" class="limit" name="MacArthur" id="macarthur" value="MacArthur">
+            <label for="macarthur">Douglas MacArthur</label>
           </fieldset>
+          <p id="fb3" class="feedback"></p>
   </div>
-  <div class="qBorder">
-         <h2>What was the secret project name for the development of the atomic bomb?</h2>
-            <select>
-              <option value="proj1">Project Tears</option>
-              <option value="proj2">Project Manhattan</option>
-              <option value="proj3">Project Monticello</option>
-              <option value="proj4">Project Helios</option>
-            </select>
-   </div>
-   <div class="qBorder"> 
-        <h2>Was Adolf Hitler German?</h2>
-        <input type="radio" name="q5" value="yes">
-        <label for="yes">Yes</label>
-        <input type="radio" name="q5" value="No">
-        <label for="no">No</label>
-   </div>
-    <p class="subButton"><strong>Submit answers:</strong></p>
-    <button type="button"onclick="alert('Your answers have been submitted to the grading committee.')">Submit</button>
-</body>
 
-<!--JS Script to make it so that checkboxes have a limit.-->
-<script>
-const checkboxes = document.querySelectorAll('.limit');
-const maxAllowed = 3;
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener ('change', function(){
-const checkedCount = document.querySelectorAll('.limit:checked').length;
-if (checkedCount > maxAllowed) {
-      this.checked = false;
-      alert("You can only select up to 3 options.");
-    }
- 
-  });
-});
-</script>
-</html
+    <div class="qBorder">
+        <h2>What was the secret project name for the development of the atomic bomb?</h2>
+        <select id="q4">
+            <option value="none">--Select an Answer--</option>
+            <option value="proj1">Project Tears</option>
+            <option value="proj2">Project Manhattan</option>
+            <option value="proj3">Project Monticello</option>
+            <option value="proj4">Project Helios</option>
+        </select>
+        <p id="fb4" class="feedback"></p>
+    </div>
+
+    <div class="qBorder"> 
+        <h2>Was Adolf Hitler German?</h2>
+        <input type="radio" name="q5" id="yes" value="yes">
+        <label for="yes">Yes</label>
+        <input type="radio" name="q5" id="no" value="No">
+        <label for="no">No</label>
+        <p id="fb5" class="feedback"></p>
+    </div>
+
+    <p class="subButton"><strong>Submit answers:</strong></p>
+    
+    <button type="button" id="submitBtn">Submit</button>
+    <br><br>
+    <button type="button" id="scoreBtn">Show My Score</button>
+    <h3 id="finalScoreDisplay"></h3>
+
+  
+    <script src="../week1/scripts/script.js"></script>
+</body>
+</html>
