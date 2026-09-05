@@ -86,6 +86,9 @@ p.pgtxt{
 h5.pgtxt {
     padding-left: 16%;
 }
+figcaption.pgtxt {
+    padding-left: 44.1%;
+}
 /* if making a list and want to use the font use this class*/
 .fontList {
     list-style: inside;
@@ -182,6 +185,3 @@ fieldset {
     border-radius: 8px;
 }
 
-.imgQuote .pgtxt{
-    padding-left: 44.1%;
-}
