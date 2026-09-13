@@ -1,23 +1,278 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/default.css">
-    <link rel="icon" type="image/x-icon" href="../images/favicon-32x32.png">
-</head>
+
+    <title>Student Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon-32x32.ico">
+    <!-- Google Font-->
+   <style>
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+</style>
+  
+    <link rel="stylesheet" href="style.css">
+  <!---->
+<script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) {
+							document.documentElement.dataset.customLang = '';
+							return;
+						}
+						document.documentElement.setAttribute('lang', 'en-us');
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					let params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000;
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					const el = document.getElementsByTagName( 'iframe' );
+					for ( let i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+
+							console.info( 'Setting iFrame height to ' + params.height );
+
+							if( el[i].getAttribute('lockwidth') !== 'true'){
+								el[i].style.width = '100%';
+								console.info( 'Setting iFrame width to 100%' );
+							}
+						}
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2026.8.278/unbundled/embeds.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2026.8.278/unbundled/mathjax.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+			if (document.querySelector('math, .d2l-element, .d2l-cplus-layout') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+				document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+					elm.setAttribute('style', 'display: block; height: 0.5rem;');
+				});
+
+				document.querySelectorAll('math mmultiscripts > none').forEach(elm => {
+					const mrow = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mrow');
+					elm.replaceWith(mrow);
+				});
+
+				window.D2L.MathJax.loadMathJax({"renderLatex":true,"outputScale":1.5,"enableMML3Support":false});
+			}
+		});</script><script src="https://s.brightspace.com/lib/bsi/2026.8.278/unbundled/prism.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', async () => {
+			document.querySelectorAll('iframe[src*="quickLink.d2l"][src*="type=lti"]').forEach(iframe => {
+				iframe.style.borderStyle = 'none';
+			});
+		});</script><script src="https://s.brightspace.com/lib/bsi/202m6.8.278/unbundled/context-provider-host-factory.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+			document.documentElement.setAttribute('data-mathjax-context', '{"renderLatex":true,"outputScale":1.5,"enableMML3Support":false}');
+			window.D2L.ContextProvider.createContextProviderHost();
+		});</script><script>
+					if (window.frameElement !== null && !document.documentElement.hasAttribute('data-oslo')) {
+						const osloSettings = {"batch":"/d2l/api/oslo/batch?languageId=1","collection":"/d2l/api/oslo/collection?languageId=1","version":"W/\"20.26.8.28153.638396676610101010\""};
+						document.documentElement.setAttribute('data-oslo', JSON.stringify(osloSettings));
+					}
+				</script><script src="https://s.brightspace.com/lib/bsi/2026.8.278/unbundled/creator.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+			const activities = [];
+			const practices = [];
+			const allPractices = document.querySelectorAll('.d2l-practice');
+			const elements = document.querySelectorAll('.d2l-element');
+			let layouts = [...document.querySelectorAll('.d2l-cplus-layout')];
+			const tables = document.querySelectorAll('table');
+			const contentStylerStyleLinks = document.querySelectorAll('head > link[href="https://templates.lcs.brightspace.com/lib/assets/css/styles.min.css"]');
+			const contentStylerOverides = document.querySelectorAll('head > link[href^="/d2l/le/contentstyler/"][data-override="override"]');
+
+			layouts = layouts.filter((layout) => layout.closest('.d2l-element.mceNonEditable') === null);
+
+			for (const practice of allPractices) {
+				const activityContainer = practice.hasAttribute('data-d2l-activity-href');
+				if (activityContainer) {
+					activities.push(practice);
+				}
+				else {
+					practices.push(practice);
+				}
+			}
+
+			if (layouts.length > 0) {
+				window.D2L.Creator.convertLayouts(layouts);
+			}
+			if (elements.length > 0) {
+				window.D2L.Creator.convertElements(elements, 6606, '/content/', true);
+			}
+			if (activities.length > 0) {
+				window.D2L.Creator.convertPracticeActivities(activities, 6606, '/content/');
+			}
+			if (practices.length > 0) {
+				window.D2L.Creator.convertPractices(practices, 6606, '/content/');
+			}
+			if (contentStylerStyleLinks.length > 0 && contentStylerOverides.length > 0 && tables.length > 0) {
+				window.D2L.Creator.wrapTables(tables);
+			}
+		});</script><script>function lti_launch( vars, target ) {
+					var query = '';
+					var new_tab = false;
+
+					for(var key in vars) {
+						if(query.length == 0) {
+							query += '?' + key + '=' + encodeURIComponent(vars[key]);
+						}
+						else {
+							query += '&' + key + '=' + encodeURIComponent(vars[key]);
+						}
+					}
+
+					var url = '/d2l/customization/pearsonlti/6606/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script></head>
+
 <body>
-<div data-include="../components/header.html"></div>
 
-<main>
-<h1>Hello there!</h1>
-<h2>Links to Assignments:</h2>
-<a href="/web140/week1/index.html">Week 1 (Quiz)</a>
-</main>
+    <!-- NAVIGATION -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
 
-<div data-include="../components/footer.html"></div>
-<script src="../scripts/HTMLInclude.js"></script>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+
+        <h1>Joseph Castro</h1>
+
+        <p>WEB140 – Web Development Portfolio</p>
+
+        <a href="#about" class="hero-btn">
+            Learn About Me
+        </a>
+
+    </header>
+
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+
+        <div class="about-container">
+
+            <img
+                src="imgs/cat.gif"
+                alt="My Photo"
+                class="profile-pic"
+            >
+
+            <div class="about-text">
+
+                <h2>About Me</h2>
+
+                <p>
+                    Hi! My name is <strong>Joseph</strong>.
+                    This page showcases the projects and exercises
+                    I will complete in my web development course.
+                </p>
+
+                <p>
+                    I enjoy collecting cds, tinkering with vintage audio equipment, curating my own music, and anything to do with audio in general.
+                </p>
+
+                <p>
+                  I have loved tech since I was a kid and have always been closely following latest trends that it holds and things that catch my eye with tech.
+                </p>
+
+              <p>
+                I decided that I wanted to do some sort of design when it came to tech since I believe that some of the most important things when it comes to tech is how it looks as well as the accessibility, that is what landed me on website design.
+              </p>
+              
+                <!-- JavaScript interaction -->
+                <div id="spinner">
+                <button id="welcomeButton">
+                    Spin Me!
+                </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects-section">
+
+        <h2>Projects</h2>
+
+        <div class="assignment-buttons">
+
+            <!-- Week 1 project -->
+            <a href="https://bumulaz.github.io/web140/week1/index.html">
+                HTML, CSS & JavaScript Webpage
+            </a>
+
+            <!-- Future projects -->
+            <a href="#">
+                Color Theory Project
+            </a>
+
+            <a href="#">
+                Typography Design
+            </a>
+
+            <a href="#">
+                Image Editing Showcase
+            </a>
+
+            <a href="#">
+                Figma Prototype
+            </a>
+
+            <a href="#">
+                WordPress Website
+            </a>
+
+            <a href="#">
+                Google Sites Project (Optional)
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
 </body>
-
 
 </html>
