@@ -11,51 +11,51 @@
 
 const palettes = {
   palette1: {
-    name: "Palette 1",
+    name: "Complementary",
 
-    primary: "#2563EB",
+    primary: "#44918F",
 
-    secondary: "#0F766E",
+    secondary: "#3B5251",
 
-    accent: "#F97316",
+    accent: "#915F44",
 
     background: "#FFFFFF",
 
     surface: "#F3F4F6",
 
-    text: "#1F2937",
+    text: "#3C3530",
   },
 
   palette2: {
-    name: "Palette 2",
+    name: "Analogous",
 
-    primary: "#6D28D9",
+    primary: "#4B61D6",
 
-    secondary: "#BE185D",
+    secondary: "#4B8DD6",
 
-    accent: "#B45309",
+    accent: "#BD4BD6",
 
     background: "#FFFFFF",
 
-    surface: "#F5F3FF",
+    surface: "#d1c3ed",
 
-    text: "#1F2937",
+    text: "#634BD7",
   },
 
   palette3: {
-    name: "Palette 3",
+    name: "Triadic",
 
-    primary: "#166534",
+    primary: "#437A6E",
 
-    secondary: "#0369A1",
+    secondary: "#7A6D43",
 
-    accent: "#B45309",
+    accent: "#FAEBBB",
 
-    background: "#FFFFFF",
+    background: "#B7CFCA",
 
     surface: "#F0FDF4",
 
-    text: "#172018",
+    text: "#77437A",
   },
 };
 
