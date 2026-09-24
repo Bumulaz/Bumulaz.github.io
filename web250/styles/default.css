@@ -60,7 +60,7 @@ body {
 }
 
 .pgHeaders{
-    font-family: 'arcade' url(web250/styles/default.css);
+    font-family: 'arcade';
 }
 
 h2.pgHeaders {
