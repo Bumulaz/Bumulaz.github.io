@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/default.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-32x32.png">
+    <title>Joseph Castro's Jocose Caracal | WEB250 | Home</title>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<?php include('components/header.php'); ?>
+
+<main>
+<h2 class="pgHeaders">Home</h2>
+<p class="pgtxt">Hello, and welcome to my WEB250 course site! This section will contain all of the work pertaining to my WEB250 course.</p>
+
+</main>
+
+
+
+<?php include('components/footer.php'); ?>
+
+</body>
+
+
+</html>

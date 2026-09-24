@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/default.css">
+    <link rel="icon" type="image/x-icon" href="../images/favicon-32x32.png">
+    <title>Joseph Castro's Jocose Caracal | WEB250 | Introduction</title>
+    <script src="https://divonbriesen.github.io/teaching/tools/standards-check.js" defer></script>
+    <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+<?php include('components/header.php'); ?>
+
+<main>
+<h2 class="pgHeaders">Introduction</h2>
+<h5 class="pgtxt">Castro, Joseph</h5>
+<p class="pgtxt">I understand that this is a public document, and I won’t put anything here I wouldn’t want anyone to see <br> - J.C. 8/23/2026</p>
+
+<p class="pgtxtH"><strong>Joseph "Beemis" Castro ~ Jocose Caracal</strong></p>
+    <figure>
+        <img  class="introImg" src="../images/defeated.jpg" alt="With one of my favorite artists">
+        <figcaption class="pgtxt"><em>With one of my favorite artists of all time</em></figcaption>
+    </figure>
+   
+<p class="pgtxt">
+    My name is Joseph, but friends call me Beemis. I am hoping to graduate by the end of this semester if all goes well. I love to listen to and collect CD’s and other forms of physical media.
+</p>
+<div class="fontList">
+    <ul>
+        <li class="pgtxt"><strong>Personal Background:</strong>Moved from Yonkers, NY to Charlotte in ‘22 to escape high pricing </li>
+        <li class="pgtxt"><strong>Professional Background:</strong>Currently working as a CSR in a computer store but hoping to change soon.</li>
+        <li class="pgtxt"><strong>Academic Background:</strong>Currently pursuing Full Stack Development</li>
+        <li class="pgtxt"><strong>Primary Work Computer:</strong>PC that I built myself running CachyOS (ArchLinux Distro) but also dual-booting Windows 11 which I rarely use now.</li>
+        <li class="pgtxt"><strong>Primary Work Location:</strong>Bedroom</li>
+        <li class="pgtxt"><strong>Alternate Computer & Location:</strong>I have a Lenovo Legion Slim laptop that runs Windows 11 that I use when I am either out and about or cannot use my main PC for whatever reason.
+        </li>
+        <li class="pgtxt"><strong>Courses I'm Taking and Why:</strong></li>
+        </ul>
+        <ol>
+            <li class="pgtxt"><strong>CSC221 - Advanced Python Programming:</strong>Required for degree</li>
+            <li class="pgtxt"><strong>WEB140 - Web Development Tools:</strong>One of the last web classes that I need and the more web knowledge that I have, the better.</li>
+            <li class="pgtxt"><strong>WEB250 - Database Driven Websites: </strong>One of the final web classes that I need and better for me as it will teach me about databases and where I will need to pull info from for my websites I assume.</li>
+        </ol>        
+</div>
+
+<p class="pgtxt">
+    "Take a long look at the past to unlock a greater future <br> Sift through the wreckage of failures <br> In the hope to make things better." 
+</p>
+<p class="pgtxt">
+    <i>-Dino Sommese</i>
+</p>
+</main>
+
+<?php include('components/footer.php'); ?>
+
+
+</body>
+
+
+</html>
