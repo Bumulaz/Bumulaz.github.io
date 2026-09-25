@@ -69,14 +69,15 @@ h2.pgHeaders {
 .pgtxt {
     font-family: 'chonky';
     font-size: 23px;
-
-
 }
-.pgtxtH {
+
+h6{
+    font-size: 50px;
+    white-space: nowrap;
     font-family: 'chonky';
-    font-size: 23px;
-    padding-left: 44.1%;
+    text-align: center;
 }
+
 p.pgtxt{
  padding-left: 16%;
 }
@@ -85,7 +86,7 @@ h5.pgtxt {
     padding-left: 16%;
 }
 figcaption.pgtxt {
-    padding-left: 44.1%;
+    text-align: center;
 }
 /* if making a list and want to use the font use this class*/
 .fontList {
@@ -120,9 +121,10 @@ figcaption.pgtxt {
     width: 13%;
 }
 .introImg {
-    width: 12%;
+    width: 25%;
     display: block;
     margin: auto;
+    padding-bottom: 6%px;
 }
 /*Example of header font in brand file*/
 .hdrExample{
