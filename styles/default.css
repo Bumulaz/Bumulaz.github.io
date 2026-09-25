@@ -1,187 +1,76 @@
+/* General Styles */
+
 body {
-
-    /* color for the page */
-    background-color: #E6D4BF;
+  font-family: "Special Elite", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  background-color: #a88a62;
+  color: #2E3033;
+  max-width: 1800px;
+  margin: auto;
 }
 
-/*fonts for the page*/
+/* Adding fonts for all of my headers */
+ :heading {
+  font-family: "Winky Rough", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 
-/*heading fonts*/
-@font-face {
-    font-family: 'arcade';
-    src: url('/fonts/arcadereg.otf') format('opentype');
-    font-style: normal;
-    font-weight: normal;
 }
 
-/*fonts for normal text*/
-@font-face {
-    font-family: 'chonky';
-    src: url('/fonts/chonky.otf')format('opentype');
-    font-style: normal;
-    font-weight: normal;
-}
-/*Title text for the page*/
-
-.pageTitle{
-    font-family: 'arcade';
-    text-align: center;
-    font-size: 65px;
+h1 {
+    font-size: 55px;
 }
 
-.pageMini {
-    font-family: 'arcade';
+h2 {
+   font-size: 32px; 
+}
+
+h3 {
+    font-size: 27px;
+}
+
+p {
     font-size: 25px;
 }
 
-/*Top nav bar*/
+footer {
+    text-align: center;
+    padding-top:25%;
+}
 
-.pageNav{
-    font-family: 'chonky';
-    text-align: center;
-    font-size: 30px;
-    padding-bottom: 3%;
-}
-/*bottom copyright text*/
-.copyright {
-    font-family: 'chonky';
-    text-align: center;
-    font-size: 19px;
-}
-/*bottom nav*/
-.botNav {
-    font-family: 'chonky';
-    text-align: center;
+a {
     font-size: 25px;
-    padding-top: 4%;
+    color: #4565AC;
 }
 
-.pgHeaders{
-    font-family: 'arcade';
-    padding-left: 15%;
+a:hover {
+    background-color: #AB9844;
 }
 
-h1.pgHeaders {
-    font-size: 30px;
+a:visited{
+    color: #59544B;
 }
 
-h2.pgHeaders {
-    font-size: 22px;
+.pageNav {
+    text-align: center;
 }
-.pgtxt {
-    font-family: 'chonky';
-    font-size: 23px;
+/* Specific Text Changes */
 
-
-}
-.pgtxtH {
-    font-family: 'chonky';
-    font-size: 23px;
-    padding-left: 44.1%;
-}
-p.pgtxt{
- padding-left: 16%;
+.mainTitle {
+    text-align: center;
 }
 
-h5.pgtxt {
-    padding-left: 16%;
-}
-figcaption.pgtxt {
-    padding-left: 44.1%;
-}
-/* if making a list and want to use the font use this class*/
-.fontList {
-    list-style: inside;
-}
-.fontList .pgtxt{
-    padding-left: 16%;
-}
-.webLink {
-    font-family: 'chonky';
-    font-size: 23px;
-    padding-left: 17%;
-}
+/* Page Logo */
 
-.introLink {
-    font-family: 'chonky';
-    font-size: 23px;
-    padding-left:17% ;
+.logo {
+   padding-left: 48%;
 }
-/*content container for info page*/
-.content {
-    max-width: 70%;
-    margin: auto;
-    
-}
-
-/*div for the picture in intro*/
-
-.pic {
-    display: block;
-    margin: auto;
-    width: 13%;
-}
-.introImg {
-    width: 12%;
-    display: block;
-    margin: auto;
-}
-/*Example of header font in brand file*/
-.hdrExample{
-    font-family: 'arcade';
-    font-size: 17px;
-}
-
-.site-logo {
-    margin-top: 8px;
-}
-.site-logo-mini {
-    float: left;
-    margin-left: 230px;
-}
-
-#introtitle {
-text-align: center;
-
-}
-
-fieldset {
-    margin-bottom: 20px;
-    padding: 15px;
-}
-
-.bgtxt {
-    flex: 1;                       
-    max-width: 900px;
-    height: 50px;
-    width: 100%;
-    overflow: auto;
-}
-
-
-.form-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    margin-bottom: 5px;
-}
-
-.form-row label {
-    flex: 0 0 180px; 
-    font-weight: bold;
-}
-
-.bgtxt, #namefield input {
-    flex: 1;
-    margin-bottom: 15px;
-    padding: 8px;
-}
-
-
-.intro-display-area {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+/* For smaller screens */
+@media screen and (max-width: 700px) {
+    .pageNav, .botNav {
+        flex-direction: column;
+    }
 }
 
