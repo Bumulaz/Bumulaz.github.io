@@ -26,20 +26,20 @@ body {
 }
 /*Title text for the page*/
 
-.pageTitle{
+.pagetitle{
     font-family: 'arcade';
     text-align: center;
     font-size: 65px;
 }
 
-.pageMini {
+.pagemini {
     font-family: 'arcade';
     font-size: 25px;
 }
 
 /*Top nav bar*/
 
-.pageNav{
+.pagenav{
     font-family: 'chonky';
     text-align: center;
     font-size: 30px;
@@ -52,18 +52,18 @@ body {
     font-size: 19px;
 }
 /*bottom nav*/
-.botNav {
+.botnav {
     font-family: 'chonky';
     text-align: center;
     font-size: 25px;
     padding-top: 4%;
 }
 
-.pgHeaders{
+.pgheaders{
     font-family: 'arcade';
 }
 
-h2.pgHeaders {
+h2.pgheaders {
     font-size: 22px;
 }
 .pgtxt {
@@ -89,19 +89,19 @@ figcaption.pgtxt {
     text-align: center;
 }
 /* if making a list and want to use the font use this class*/
-.fontList {
+.fontlist {
     list-style: inside;
 }
-.fontList .pgtxt{
+.fontlist .pgtxt{
     padding-left: 16%;
 }
-.webLink {
+.weblink {
     font-family: 'chonky';
     font-size: 23px;
     padding-left: 17%;
 }
 
-.introLink {
+.introlink {
     font-family: 'chonky';
     font-size: 23px;
     padding-left:17% ;
@@ -120,14 +120,14 @@ figcaption.pgtxt {
     margin: auto;
     width: 13%;
 }
-.introImg {
+.introimg {
     width: 25%;
     display: block;
     margin: auto;
     padding-bottom: 6%px;
 }
 /*Example of header font in brand file*/
-.hdrExample{
+.hdrexample{
     font-family: 'arcade';
     font-size: 17px;
 }
@@ -186,7 +186,7 @@ fieldset {
 }
 
 @media screen and (max-width: 700px) {
-    .pageNav, .botNav {
+    .pagenav, .botnav {
         flex-direction: column;
     }
 }

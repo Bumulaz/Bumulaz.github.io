@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Typography & Font Pairing</title>
+
+    <!--
+        Google Fonts
+
+        Mockup 1 suggestions:
+        Playfair Display + DM Sans
+
+        Students may use other fonts.
+        If you use a Google Font that is not listed here,
+        add it to the Google Fonts link below.
+    -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Alike&family=Antic&family=Audiowide&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Iceland&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Rosario:ital,wght@0,300..700;1,300..700&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+<script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) {
+							document.documentElement.dataset.customLang = '';
+							return;
+						}
+						document.documentElement.setAttribute('lang', 'en-us');
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					let params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000;
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					const el = document.getElementsByTagName( 'iframe' );
+					for ( let i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+
+							console.info( 'Setting iFrame height to ' + params.height );
+
+							if( el[i].getAttribute('lockwidth') !== 'true'){
+								el[i].style.width = '100%';
+								console.info( 'Setting iFrame width to 100%' );
+							}
+						}
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/embeds.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/mathjax.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+			if (document.querySelector('math, .d2l-element, .d2l-cplus-layout') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+				document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+					elm.setAttribute('style', 'display: block; height: 0.5rem;');
+				});
+
+				document.querySelectorAll('math mmultiscripts > none').forEach(elm => {
+					const mrow = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mrow');
+					elm.replaceWith(mrow);
+				});
+
+				window.D2L.MathJax.loadMathJax({"renderLatex":true,"outputScale":1.5,"enableMML3Support":false});
+			}
+		});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/prism.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', async () => {
+			document.querySelectorAll('iframe[src*="quickLink.d2l"][src*="type=lti"]').forEach(iframe => {
+				iframe.style.borderStyle = 'none';
+			});
+		});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/context-provider-host-factory.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+			document.documentElement.setAttribute('data-mathjax-context', '{"renderLatex":true,"outputScale":1.5,"enableMML3Support":false}');
+			window.D2L.ContextProvider.createContextProviderHost();
+		});</script><script>
+					if (window.frameElement !== null && !document.documentElement.hasAttribute('data-oslo')) {
+						const osloSettings = {"batch":"/d2l/api/oslo/batch?languageId=1","collection":"/d2l/api/oslo/collection?languageId=1","version":"W/\"20.26.9.24696.638396676610101010\""};
+						document.documentElement.setAttribute('data-oslo', JSON.stringify(osloSettings));
+					}
+				</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/creator.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+			const activities = [];
+			const practices = [];
+			const allPractices = document.querySelectorAll('.d2l-practice');
+			const elements = document.querySelectorAll('.d2l-element');
+			let layouts = [...document.querySelectorAll('.d2l-cplus-layout')];
+			const tables = document.querySelectorAll('table');
+			const contentStylerStyleLinks = document.querySelectorAll('head > link[href="https://templates.lcs.brightspace.com/lib/assets/css/styles.min.css"]');
+			const contentStylerOverides = document.querySelectorAll('head > link[href^="/d2l/le/contentstyler/"][data-override="override"]');
+
+			layouts = layouts.filter((layout) => layout.closest('.d2l-element.mceNonEditable') === null);
+
+			for (const practice of allPractices) {
+				const activityContainer = practice.hasAttribute('data-d2l-activity-href');
+				if (activityContainer) {
+					activities.push(practice);
+				}
+				else {
+					practices.push(practice);
+				}
+			}
+
+			if (layouts.length > 0) {
+				window.D2L.Creator.convertLayouts(layouts);
+			}
+			if (elements.length > 0) {
+				window.D2L.Creator.convertElements(elements, 6606, '/content/', true);
+			}
+			if (activities.length > 0) {
+				window.D2L.Creator.convertPracticeActivities(activities, 6606, '/content/');
+			}
+			if (practices.length > 0) {
+				window.D2L.Creator.convertPractices(practices, 6606, '/content/');
+			}
+			if (contentStylerStyleLinks.length > 0 && contentStylerOverides.length > 0 && tables.length > 0) {
+				window.D2L.Creator.wrapTables(tables);
+			}
+		});</script><script>function lti_launch( vars, target ) {
+					var query = '';
+					var new_tab = false;
+
+					for(var key in vars) {
+						if(query.length == 0) {
+							query += '?' + key + '=' + encodeURIComponent(vars[key]);
+						}
+						else {
+							query += '&' + key + '=' + encodeURIComponent(vars[key]);
+						}
+					}
+
+					var url = '/d2l/customization/pearsonlti/6606/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script></head>
+
+<body>
+
+    <!-- ========================================
+         HEADER
+    ========================================= -->
+    <header class="site-header">
+
+        <h1>Typography & Font Pairing</h1>
+
+        <p>
+            Exploring typography, hierarchy, readability,
+            and visual style
+        </p>
+
+    </header>
+
+
+    <!-- ========================================
+         NAVIGATION
+    ========================================= -->
+    <nav class="main-nav">
+
+        <a href="#editorial">Editorial</a>
+
+        <a href="#minimal">Modern Minimal</a>
+
+        <a href="#creative">Creative</a>
+
+        <a href="#professional">Professional</a>
+
+
+    </nav>
+
+
+    <main>
+
+
+        <!-- ========================================
+             MOCKUP 1 - EDITORIAL
+        ========================================= -->
+        <section id="editorial" class="mockup editorial">
+
+            <div class="mockup-label">
+                <span>Mockup 1</span>
+                <span>Editorial</span>
+            </div>
+
+            <div class="mockup-content">
+
+                <p class="eyebrow">
+                    TYPOGRAPHY STUDY
+                </p>
+
+                <h2>
+                    The Art of Simplicity
+                </h2>
+
+                <h3>
+                    Less clutter. More meaning.
+                </h3>
+
+                <p class="body-text">
+                    Good design does not always need more elements.
+                    Sometimes, the most effective design comes from
+                    thoughtful typography, intentional spacing, and a
+                    clear visual hierarchy.
+                </p>
+
+                <a href="#" class="text-link">
+                    Explore the idea →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             MOCKUP 2 - MODERN MINIMAL
+        ========================================= -->
+        <section id="minimal" class="mockup minimal">
+
+            <div class="mockup-label">
+                <span>Mockup 2</span>
+                <span>Modern Minimal</span>
+            </div>
+
+            <div class="mockup-content">
+
+                <p class="eyebrow">
+                    Artist Inspirations
+                </p>
+
+                <h2>
+                    The Muse of Ambition
+                </h2>
+
+                <h3>
+                    Inspiration is not made. It is found.
+                </h3>
+
+                <p class="body-text">
+                    People get the wrong idea when it comes to artists and how they create their art. They believe that they innately have the ability to create such beautiful pieces. The reality of it all is that they are almost always inspired by something that they saw in their lives.
+                </p>
+
+                <a href="#" class="text-link">
+                    Learn more →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             MOCKUP 3 - CREATIVE
+        ========================================= -->
+        <section id="creative" class="mockup creative">
+
+            <div class="mockup-label">
+                <span>Mockup 3</span>
+                <span>Creative</span>
+            </div>
+
+            <div class="mockup-content">
+
+                <p class="eyebrow">
+                    Advents of Colored TV
+                </p>
+
+                <h2>
+                    The Leap of Television  
+                </h2>
+
+                <h3>
+                    From B/W moving pictures to colored television
+                </h3>
+
+                <p class="body-text">
+                    lIn 1954 the first colored broadcast in the U.S. aired. However, beacuse of how expensive colored TV was at the time, Many Americans were not able to witness it. Many news broadcasts stayed in black and white broadcasting until the late '60s
+                </p>
+
+                <a href="#" class="text-link">
+                    Discover more →
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================
+             MOCKUP 4 - PROFESSIONAL
+        ========================================= -->
+        <section id="professional" class="mockup professional">
+
+            <div class="mockup-label">
+                <span>Mockup 4</span>
+                <span>Professional</span>
+            </div>
+
+            <div class="mockup-content">
+
+                <p class="eyebrow">
+                    3D Printing
+                </p>
+
+                <h2>
+                    You Wouldn't Download a Table.
+                </h2>
+
+                <h3>
+                    Need decor? 3D print it. <br> Need drawers? 3D print it.
+                </h3>
+
+                <p class="body-text">
+                    3d printing has made the task of creating decor and furnishings  in your home a breeze. So long as you have creativity, and a willingness to troubleshoot, then there is no limit to what you can make.
+                </p>
+
+                <a href="#" class="text-link">
+                    Read more →
+                </a>
+
+            </div>
+
+        </section>
+
+
+     
+
+    </main>
+
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+    <footer>
+
+        <p>
+            Typography & Font Pairing Assignment
+        </p>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
