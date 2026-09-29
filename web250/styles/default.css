@@ -191,10 +191,6 @@ fieldset {
     }
 }
 
-a {
-    color: #ae7224;
-}
-
-a:visited {
-    color: #7b8b60;
+a:hover {
+    transform: scaleY(2%);
 }
