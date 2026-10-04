@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Remix & Icon Challenge</title>
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+<script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.documentElement.hasAttribute('lang')) {
+							document.documentElement.dataset.customLang = '';
+							return;
+						}
+						document.documentElement.setAttribute('lang', 'en-us');
+					});</script><script>document.addEventListener('DOMContentLoaded', function() {
+						if (document.head.querySelector('title')) return;
+						var handleAppendTitle = function(evt) {
+							if (!evt || !evt.data) return;
+
+							try {
+								var data = JSON.parse(evt.data);
+								if (data.handler !== 'd2l.iframe.requestPageTitle' || !data.pageTitle) return;
+
+								window.removeEventListener('message', handleAppendTitle, false);
+
+								var titleElm = document.createElement('title');
+								titleElm.textContent = data.pageTitle;
+								document.head.appendChild(titleElm);
+							} catch (e) {}
+						};
+
+						window.addEventListener('message', handleAppendTitle, false);
+						window.parent.postMessage(JSON.stringify({ handler: 'd2l.iframe.requestPageTitle' }), '*');
+					});</script><script>window.addEventListener('message', function(event) { 
+					if( !event.data ) {
+						return;
+					}
+
+					let params;
+					try {
+						params = JSON.parse( event.data );
+					}
+					catch {
+						return;
+					}
+					if( !params.subject || params.subject !== 'lti.frameResize' ) {
+						return;
+					}
+
+					const MAX_FRAME_HEIGHT = 10000;
+					if( !params.height || params.height < 1 || params.height > MAX_FRAME_HEIGHT ) {
+						console.warn( 'Invalid height value received, aborting' );
+						return;
+					}
+					const el = document.getElementsByTagName( 'iframe' );
+					for ( let i=0; i < el.length; i++ ) {
+						if( el[i].contentWindow === event.source ) {
+							el[i].style.height = params.height + 'px';
+
+							console.info( 'Setting iFrame height to ' + params.height );
+
+							if( el[i].getAttribute('lockwidth') !== 'true'){
+								el[i].style.width = '100%';
+								console.info( 'Setting iFrame width to 100%' );
+							}
+						}
+					}
+				});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/embeds.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					window.D2L.EmbedRenderer.renderEmbeds(document.body);
+				});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/mathjax.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+			if (document.querySelector('math, .d2l-element, .d2l-cplus-layout') || /\$\$|\\\(|\\\[|\\begin{|\\ref{|\\eqref{/.test(document.body.innerHTML)) {
+				document.querySelectorAll('mspace[linebreak="newline"]').forEach(elm => {
+					elm.setAttribute('style', 'display: block; height: 0.5rem;');
+				});
+
+				document.querySelectorAll('math mmultiscripts > none').forEach(elm => {
+					const mrow = document.createElementNS('http://www.w3.org/1998/Math/MathML', 'mrow');
+					elm.replaceWith(mrow);
+				});
+
+				window.D2L.MathJax.loadMathJax({"renderLatex":true,"outputScale":1.5,"enableMML3Support":false});
+			}
+		});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/prism.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', function() {
+					document.querySelectorAll('.d2l-code').forEach(code => {
+						window.D2L.Prism.formatCodeElement(code);
+					});
+				});</script><script>document.addEventListener('DOMContentLoaded', async () => {
+			document.querySelectorAll('iframe[src*="quickLink.d2l"][src*="type=lti"]').forEach(iframe => {
+				iframe.style.borderStyle = 'none';
+			});
+		});</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/context-provider-host-factory.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+			document.documentElement.setAttribute('data-mathjax-context', '{"renderLatex":true,"outputScale":1.5,"enableMML3Support":false}');
+			window.D2L.ContextProvider.createContextProviderHost();
+		});</script><script>
+					if (window.frameElement !== null && !document.documentElement.hasAttribute('data-oslo')) {
+						const osloSettings = {"batch":"/d2l/api/oslo/batch?languageId=1","collection":"/d2l/api/oslo/collection?languageId=1","version":"W/\"20.26.9.24696.638396676610101010\""};
+						document.documentElement.setAttribute('data-oslo', JSON.stringify(osloSettings));
+					}
+				</script><script src="https://s.brightspace.com/lib/bsi/2026.9.217/unbundled/creator.js" type="module"></script><script>document.addEventListener('DOMContentLoaded', async () => {
+			const activities = [];
+			const practices = [];
+			const allPractices = document.querySelectorAll('.d2l-practice');
+			const elements = document.querySelectorAll('.d2l-element');
+			let layouts = [...document.querySelectorAll('.d2l-cplus-layout')];
+			const tables = document.querySelectorAll('table');
+			const contentStylerStyleLinks = document.querySelectorAll('head > link[href="https://templates.lcs.brightspace.com/lib/assets/css/styles.min.css"]');
+			const contentStylerOverides = document.querySelectorAll('head > link[href^="/d2l/le/contentstyler/"][data-override="override"]');
+
+			layouts = layouts.filter((layout) => layout.closest('.d2l-element.mceNonEditable') === null);
+
+			for (const practice of allPractices) {
+				const activityContainer = practice.hasAttribute('data-d2l-activity-href');
+				if (activityContainer) {
+					activities.push(practice);
+				}
+				else {
+					practices.push(practice);
+				}
+			}
+
+			if (layouts.length > 0) {
+				window.D2L.Creator.convertLayouts(layouts);
+			}
+			if (elements.length > 0) {
+				window.D2L.Creator.convertElements(elements, 6606, '/content/', true);
+			}
+			if (activities.length > 0) {
+				window.D2L.Creator.convertPracticeActivities(activities, 6606, '/content/');
+			}
+			if (practices.length > 0) {
+				window.D2L.Creator.convertPractices(practices, 6606, '/content/');
+			}
+			if (contentStylerStyleLinks.length > 0 && contentStylerOverides.length > 0 && tables.length > 0) {
+				window.D2L.Creator.wrapTables(tables);
+			}
+		});</script><script>function lti_launch( vars, target ) {
+					var query = '';
+					var new_tab = false;
+
+					for(var key in vars) {
+						if(query.length == 0) {
+							query += '?' + key + '=' + encodeURIComponent(vars[key]);
+						}
+						else {
+							query += '&' + key + '=' + encodeURIComponent(vars[key]);
+						}
+					}
+
+					var url = '/d2l/customization/pearsonlti/6606/Launch' + query;(target == '_blank') ? window.open( url, '_blank' ) : location.replace( url );}</script></head>
+
+<body>
+
+    
+   <!-- Header and Navigation -->
+<header class="site-header">
+    <nav class="navbar">
+
+        <a href="#home" class="logo">
+            <i class="fa-solid fa-pen"></i>
+            Jazz Editing Practice
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#home">
+                    <i class="fa-solid fa-city"></i>
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="#gallery">
+                    <i class="fa-solid fa-images"></i>
+                    Gallery
+                </a>
+            </li>
+
+            <li>
+                <a href="#features">
+                    <i class="fa-solid fa-atom"></i>
+                    Features
+                </a>
+            </li>
+
+            <li>
+                <a href="#contact">
+                    <i class="fa-solid fa-square-phone-flip"></i>
+                    Contact
+                </a>
+            </li>
+
+            <!-- Link to WEB140 Portfolio -->
+            <li>
+                <a
+                    href="https://bumulaz.github.io/web140/portf.html"
+                    target="_blank"
+                >
+                    <i class="fa-solid fa-link"></i>
+                    WEB140 Portfolio
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+
+    <!-- Hero Section -->
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+                <p class="eyebrow">WEB140 • Design Tools</p>
+
+                <h1>Jazz Editing Practice</h1>
+
+                <p>
+                    Welcome to my Jazz Practice Edits. Below you will find multiple images related to jazz that I decided to spice up a bit with some editing.  <br> <br> I wanted to see if I could change the feeling that they had with some editing the images original look.
+                </p>
+
+                <a href="#gallery" class="button">
+                    Explore My Images
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+           
+
+        </section>
+
+
+        <!-- Image Gallery -->
+        <section id="gallery" class="section">
+
+            <div class="section-heading">
+                <p class="eyebrow">Jazz Editing</p>
+                <h2>Jazz Image Editing Practice</h2>
+
+                <p>
+                    The images below will show me practicing some editing techniques on some jazz images to change the overall feeling and mood that they give.
+                </p>
+            </div>
+
+
+            <!-- Image 1: Black and White -->
+            <article class="image-project">
+
+                <h3>
+                    <i class="fa-solid fa-camera-retro"></i>
+                    Saxophonist Noir
+                </h3>
+
+                <p>
+                    Below we see the before and after of the saxophone player.  Original image has the player in golden light playing amidst smoke on a stage. <br> In the edited image, I went for a classic black and white image. A throwback reminding us of retro 1950's-esque times. <br> The original image gives sort of a triumphant feeling with the golden colors that it had, the latter though gives sort of a more classic feeling and dreamlike feeling, as if it were something that you see within a memory.
+                </p>
+
+                <div class="image-comparison">
+
+                    <div class="image-card">
+                        <h4>Original Image</h4>
+
+                        <img
+                            src="images/img1-original.jpg"
+                            alt="Original image of saxophone player."
+                        >
+                    </div>
+
+                    <div class="image-card">
+                        <h4>Edited Image</h4>
+
+                        <img
+                            src="images/img1-edited.jpg"
+                            alt="Edited B/W saxophone player"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Image 2: Saturation -->
+            <article class="image-project">
+
+                <h3>
+                    <i class="fa-solid fa-drum"></i>
+                        A Band Brought To Light
+                </h3>
+
+                <p>
+                    The original image shows a band as they are beginning their rehearsal for their upcoming show. The lighting is good, though I felt that it could be better. 
+                    <br> I added some saturation to the image to give it a bit more oomph so that if there was any question of the original image not being clear, then it certainly is now.
+                </p>
+
+                <div class="image-comparison">
+
+                    <div class="image-card">
+                        <h4>Original Image</h4>
+
+                        <img
+                            src="images/img2-original.jpg"
+                            alt="Original image of band rehearsal"
+                        >
+                    </div>
+
+                    <div class="image-card">
+                        <h4>Edited Image</h4>
+
+                        <img
+                            src="images/img2-edited.jpg"
+                            alt="Edited image of band with more saturation"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Image 3: Contrast -->
+            <article class="image-project">
+
+                <h3>
+                    <i class="fa-solid fa-compact-disc"></i>
+                    A Record of Time
+                </h3>
+
+                <p>
+                    Here was a cute image that I saw while walking in a record store the other day. I decided to snap a picture of it. 
+                    <br> I changed the contrast of the image so that there was a bit more of a grainy look to the picture. It sort of makes it look like it has some film grain which I felt was fitting with the color that the image has. Sort of gives it a warmer and nostalgic feeling.
+                </p>
+
+                <div class="image-comparison">
+
+                    <div class="image-card">
+                        <h4>Original Image</h4>
+
+                        <img
+                            src="images/img3-original.jpg"
+                            alt="Original image of jazz record"
+                        >
+                    </div>
+
+                    <div class="image-card">
+                        <h4>Edited Image</h4>
+
+                        <img
+                            src="images/img3-edited.jpg"
+                            alt="Edited grainier record image"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Image 4: Monochromatic -->
+            <article class="image-project">
+
+                <h3>
+                    <i class="fa-solid fa-glass-water-droplet"></i>
+                    From Gold to Sky
+                </h3>
+
+                <p>
+                    With the main instruments of jazz being made of brass, you are going to see alot of gold. 
+                    <br>I decided I wanted to see what would it feel like if I changed that to a very opposite color to that, something like a nice blue. 
+                    <br> I had a picture of a closeup of a saxophonist playing, and added a monochrome blue theme to it. It is a bit of a loud color but it makes it look like he went from performing in a concerto to just a normal concert that you can catch at your local music hall with the blue light straight on him.
+                </p>
+
+                <div class="image-comparison">
+
+                    <div class="image-card">
+                        <h4>Original Image</h4>
+
+                        <img
+                            src="images/img4-original.jpg"
+                            alt="closeup of saxophonist"
+                        >
+                    </div>
+
+                    <div class="image-card">
+                        <h4>Edited Image</h4>
+
+                        <img
+                            src="images/img4-edited.jpg"
+                            alt="Edited blue saxophonist image"
+                        >
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Font Awesome Icon Section -->
+        <section id="features" class="section features-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">Font Awesome</p>
+
+                <h2>Icons That Support My Theme</h2>
+
+                <p>
+                    These icons were selected from Font Awesome
+                    and customized using CSS.
+                </p>
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-photo-film feature-icon"></i>
+
+                    <h3>Photography</h3>
+
+                    <p>
+                        The photos that were taken were all related to jazz artists and their instruments. Jazz brings a warm and soothing feeling which invites me to do well when editing.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-mountain-sun feature-icon"></i>
+
+                    <h3>Inspiration</h3>
+
+                    <p>
+                        Jazz has a calming and also upbeat environment, it is a very versatile genre of music and is one of the best things to put on when working, so doing work around it felt like the right thing to do. 
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <i class="fa-solid fa-wand-magic-sparkles feature-icon"></i>
+
+                    <h3>Creativity</h3>
+
+                    <p>
+                        Editing images allows you to tweak images, videos, or even webpages to tailor it to be as perfect as you would like it to be. It is an amazing skill to have as you are able to turn something that originally looks mundane or incomplete, into something that really stands out to people or whoever is seeing your work.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Icon Buttons -->
+        <section class="section icon-section">
+
+            <div class="section-heading">
+                <h2>Navigation</h2>
+
+                <p>
+                    Use these buttons to return to the sections.
+                </p>
+            </div>
+
+            <div class="button-group">
+
+                <a href="#gallery" class="button">
+                    <i class="fa-solid fa-images"></i>
+                    View Gallery
+                </a>
+
+                <a href="#contact" class="button button-secondary">
+                    <i class="fa-solid fa-phone-volume"></i>
+                    Contact Me
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact-section">
+
+            <div class="section-heading">
+                <p class="eyebrow">Get in Touch</p>
+
+                <h2>Contact Information</h2>
+
+                <p>
+                    Reach out to me if you have anything that you want to talk to me about or if you have any critiques, all are appreciated!
+                </p>
+            </div>
+
+            <div class="contact-links">
+
+                <a href="jcastr45@email.cpcc.edu">
+                    <i class="fa-solid fa-envelope"></i>
+                    Email
+                </a>
+
+                <a href="https://github.com/Bumulaz" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+
+                <a href="https://www.instagram.com" target="_blank">
+                    <i class="fa-brands fa-instagram"></i>
+                    Instagram
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <p>
+            &copy; <span id="year"></span>
+            Image Remix & Icon Challenge
+        </p>
+
+        <div class="social-links">
+
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="#" aria-label="LinkedIn">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
