@@ -8,6 +8,8 @@ body {
   color: #2E3033;
   max-width: 1800px;
   margin: auto;
+  padding: 0 5%;
+
 }
 
 /* Adding fonts for all of my headers */
@@ -47,10 +49,6 @@ a {
 
 a:hover {
     background-color: #AB9844;
-}
-
-a:visited{
-    color: #59544B;
 }
 
 .pagenav {

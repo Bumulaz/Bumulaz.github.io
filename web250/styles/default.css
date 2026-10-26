@@ -4,7 +4,7 @@ body {
     background-color: #E6D4BF;
     max-width: 1800px;
     margin: auto;
-
+    padding: 0 5%;
 }
 
 /*fonts for the page*/
@@ -198,4 +198,8 @@ fieldset {
 
 a:hover {
     transform: scaleY(2%);
+}
+
+a, a:visited {
+    color: #5C8191
 }
