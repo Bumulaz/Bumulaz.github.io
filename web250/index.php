@@ -11,12 +11,15 @@
 </head>
 
 <body>
+<!------------------------------------------------------------>
+<!--The classes that say "pgtxt" and "pgheaders" are used to choose what font size i want to certain pieces of texts. Some of these are for headers and some just for regular text. pgtxt class for most and pgheader just for titles.-->
+<div data-include="./components/header.html"></div> <!--this div holds the call for the JS script that calls my header html file-->
 <?php include('components/header.php'); ?>
 
 <main>
-<h2 class="pgHeaders">Home</h2>
+<h2 class="pgheaders">Home</h2>
 <p class="pgtxt">Hello, and welcome to my WEB250 course site! This section will contain all of the work pertaining to my WEB250 course.</p>
-
+<a class="pgtxt" href="introduction.php">PHP Intro Assignment</a>
 </main>
 
 
