@@ -11,6 +11,8 @@
 </head>
 
 <body>
+    <!------------------------------------------------------------>
+<!--The classes that say "pgtxt" and "pgheaders" are used to choose what font size i want to certain pieces of texts. Some of these are for headers and some just for regular text. pgtxt class for most and pgheader just for titles.-->
 <?php include('components/header.php'); ?>
 
 <main>
