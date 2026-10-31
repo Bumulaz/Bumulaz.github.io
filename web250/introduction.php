@@ -22,14 +22,14 @@
 
 <h6><strong>Joseph "Beemis" Castro ~ Jocose Caracal</strong></h6>
     <figure>
-        <img  class="introimg" src="/images/defeated.jpg" alt="With one of my favorite artists">
+        <img  class="introimg" src="images/defeated.jpg" alt="With one of my favorite artists">
         <figcaption class="pgtxt"><em>With one of my favorite artists of all time</em></figcaption>
     </figure>
    
 <p class="pgtxt">
     My name is Joseph, but friends call me Beemis. I am hoping to graduate by the end of this semester if all goes well. I love to listen to and collect CD’s and other forms of physical media.
 </p>
-<div class="fontList">
+<div class="fontList"> <!--this div holds the main text for the introduction page.-->
     <ul>
         <li class="pgtxt"><strong>Personal Background:</strong> Moved from Yonkers, NY to Charlotte in ‘22 to escape high pricing</li>
         <li class="pgtxt"><strong>Professional Background:</strong> Currently working as a CSR in a computer store but hoping to change soon.</li>
