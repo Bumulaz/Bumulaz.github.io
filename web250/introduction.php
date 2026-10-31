@@ -22,7 +22,7 @@
 
 <h6><strong>Joseph "Beemis" Castro ~ Jocose Caracal</strong></h6>
     <figure>
-        <img  class="introimg" src="images/defeated.jpg" alt="With one of my favorite artists"> <!--This class is what will hold the img for the introduction that is under my name.-->
+        <img  class="introimg" src="/images/defeated.jpg" alt="With one of my favorite artists"> <!--This class is what will hold the img for the introduction that is under my name.-->
         <figcaption class="pgtxt"><em>With one of my favorite artists of all time</em></figcaption>
     </figure>
    
